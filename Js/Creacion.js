@@ -1,11 +1,17 @@
 const contenedorTarjetas = document.getElementById("contenedor-tarjetas");
-const botonCrearTarjeta = document.getElementById("boton-crear-tarjeta");
-const botonAgregarTarjeta = document.getElementById("boton-agregar-tarjeta");
-const filaPanelTareas= document.getElementById("fila_panel_de_tareas");
-const filaCalendario= document.getElementById("fila_calendario");
 const contenedorIngresoDatosTarjetas = document.getElementById("contenedor-ingreso-datos-tarjetas");
 const contenedorSeccionCrearTarjetas = document.getElementById("contenedor-seccion-crear-tarjetas");
-const contenedorCalendario = document.getElementById("calendario-container");
+const contenedorCalendarioMes = document.getElementById("calendario-container");
+const contenedorCalendarioSemana = document.getElementById("calendario-week-container");
+
+const botonCrearTarjeta = document.getElementById("boton-crear-tarjeta");
+const botonAgregarTarjeta = document.getElementById("boton-agregar-tarjeta");
+
+const filaPanelTareas= document.getElementById("fila_panel_de_tareas");
+const filaMes= document.getElementById("fila_mes");
+const filaSemana= document.getElementById("fila_semana");
+
+
 const inputTitulo = document.getElementById("input-titulo");
 const inputDescripcion = document.getElementById("input-descripcion");
 const inputFechaInicio = document.getElementById("input-fecha-inicio");
@@ -15,6 +21,10 @@ const inputHoraFin = document.getElementById("input-hora-fin");
 
 let cadenaTarjetas = [];
 let idActual = 1;
+
+// Variables para las instancias de calendario
+let calendarioMes;
+let calendarioSemana;
 
 class Tarjeta {
     constructor(id, titulo, descripcion, horaInicio, horaFin, fechaInicio, fechaFin) {
@@ -30,21 +40,36 @@ class Tarjeta {
 
 function iniciarJuego() {
     contenedorIngresoDatosTarjetas.style.display = "none";
+    
+    // Inicialmente solo mostramos el calendario mensual
     contenedorSeccionCrearTarjetas.style.display = "none";
+    contenedorCalendarioMes.style.display = "block";
+    contenedorCalendarioSemana.style.display = "none";
+    
     botonCrearTarjeta.addEventListener("click", crearTarjeta);
     botonAgregarTarjeta.addEventListener("click", agregarTarjeta);
-    filaCalendario.addEventListener("click", () => {
-        contenedorCalendario.style.display = "block";
+
+    // Inicializar el calendario
+    calendarioMes = new Calendario('calendario-container');
+    calendarioSemana = new CalendarioSemanal('calendario-week-container');
+    
+    filaMes.addEventListener("click", () => {
+        contenedorCalendarioMes.style.display = "block";
+        contenedorSeccionCrearTarjetas.style.display = "none";
+        contenedorCalendarioSemana.style.display = "none";
+    });
+    
+    filaSemana.addEventListener("click", () => {
+        contenedorCalendarioSemana.style.display = "block";
+        contenedorCalendarioMes.style.display = "none";
         contenedorSeccionCrearTarjetas.style.display = "none";
     });
+    
     filaPanelTareas.addEventListener("click", () => {
-        contenedorCalendario.style.display = "none";
+        contenedorCalendarioMes.style.display = "none";
+        contenedorCalendarioSemana.style.display = "none";
         contenedorSeccionCrearTarjetas.style.display = "block";
     });
-        
-    
-    // Inicializar el calendario
-    const calendario = new Calendario('calendario-container');
 }
 
 function crearTarjeta() {
@@ -104,6 +129,15 @@ function agregarTarjeta() {
     // Ocultar el formulario y volver a mostrar el botón de creación
     contenedorIngresoDatosTarjetas.style.display = "none";
     botonCrearTarjeta.style.display = "block";
+    
+    // Actualizar los calendarios para mostrar la nueva tarea
+    if (calendarioMes) {
+        calendarioMes.render();
+    }
+    
+    if (calendarioSemana) {
+        calendarioSemana.render();
+    }
 }
 
 window.addEventListener("load", iniciarJuego);
