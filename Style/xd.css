@@ -1,0 +1,170 @@
+.importancia-alta {
+    border-left: 4px solid #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.05);
+}
+
+.importancia-media {
+    border-left: 4px solid #ffcc00;
+    background-color: rgba(255, 204, 0, 0.05);
+}
+
+.importancia-baja {
+    border-left: 4px solid #33cc33;
+    background-color: rgba(51, 204, 51, 0.05);
+}
+
+/* Estilos para tarjetas según proximidad */
+.urgente {
+    background-color: rgba(255, 77, 77, 0.1);
+    border: 1px solid rgba(255, 77, 77, 0.2);
+}
+
+.cercana {
+    background-color: rgba(255, 204, 0, 0.1);
+    border: 1px solid rgba(255, 204, 0, 0.2);
+}
+
+.vencida {
+    background-color: rgba(128, 128, 128, 0.2);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    color: #666;
+}
+
+/* Estilos para tarjetas completadas */
+.completada {
+    opacity: 0.7;
+    background-color: rgba(200, 200, 200, 0.1);
+    border: 1px solid rgba(200, 200, 200, 0.2);
+}
+
+.completada h3,
+.completada p {
+    text-decoration: line-through;
+    color: rgba(242, 227, 213, 0.6);
+}
+
+/* Estilos para las etiquetas */
+.tarjeta-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.etiqueta {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    color: var(--ColorTexto);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.etiqueta:hover {
+    transform: translateY(-1px);
+}
+
+.etiqueta-importancia {
+    background-color: var(--ColorSecundario);
+}
+
+.etiqueta-dias {
+    background-color: var(--ColorTitulos);
+}
+
+/* Estilos para los controles de tareas */
+.controles-tareas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--ColorFondo);
+    border-radius: 8px;
+}
+
+.tarjeta-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tarjeta-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.boton-completar,
+.boton-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: var(--ColorTexto);
+}
+
+.boton-completar:hover {
+    background-color: rgba(60, 166, 166, 0.2);
+    color: var(--ColorTitulos);
+}
+
+.boton-eliminar:hover {
+    background-color: rgba(255, 77, 77, 0.2);
+    color: #ff4d4d;
+}
+
+/* Estilo para el selector de importancia */
+.campo-importancia {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--ColorFondo);
+    border-radius: 5px;
+}
+
+.campo-importancia label {
+    font-weight: 500;
+    color: var(--ColorTexto);
+}
+
+.campo-importancia select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--ColorSection);
+    color: var(--ColorTexto);
+    border: 1px solid var(--ColorSecundario);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .controles-tareas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tarjeta-etiquetas {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .etiqueta {
+        padding: 3px 8px;
+        font-size: 0.8em;
+    }
+
+    .boton-completar,
+    .boton-eliminar {
+        font-size: 1em;
+    }
+}
