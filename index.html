@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="Style/Style.css">
+        <link rel="stylesheet" href="Style/estadisticas.css">
         <link rel="stylesheet" href="Style/calendario.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,49 +22,7 @@
                 <div class="list">
                     <div id="fila_mes" class="element">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#7e8590"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-pencil"
-                      >
-                        <path
-                          d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
-                        ></path>
-                        <path d="m15 5 4 4"></path>
-                      </svg>
-                      <p class="label">Mes</p>
-                    </div>
-                    <div class="separator"></div>
-                    <div id="fila_semana" class="element">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#7e8590"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-pencil"
-                      >
-                        <path
-                          d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
-                        ></path>
-                        <path d="m15 5 4 4"></path>
-                      </svg>
-                      <p class="label">Semana</p>
-                    </div>
-                    <div class="separator"></div>
-                    <div id="fila_panel_de_tareas" class="element">
-                      <svg
-                        class="lucide lucide-user-round-plus"
+                        class="lucide lucide-calendar"
                         stroke-linejoin="round"
                         stroke-linecap="round"
                         stroke-width="2"
@@ -74,12 +33,76 @@
                         width="24"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path d="M2 21a8 8 0 0 1 13.292-6"></path>
-                        <circle r="5" cy="8" cx="10"></circle>
-                        <path d="M19 16v6"></path>
-                        <path d="M22 19h-6"></path>
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
                       </svg>
+
+                      <p class="label">Mes</p>
+                    </div>
+                    <div class="separator"></div>
+                    <div id="fila_semana" class="element">
+                      <svg
+                        class="lucide lucide-calendar"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        stroke="#7e8590"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+
+                      <p class="label">Semana</p>
+                    </div>
+                    <div class="separator"></div>
+                    <div id="fila_panel_de_tareas" class="element">
+                      <svg
+                        class="lucide lucide-pencil"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        stroke="#7e8590"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M18.42 2.58a2 2 0 0 1 2.83 2.83L7 19.66 2 21l1.34-5.05Z"></path>
+                      </svg>
+                    
                       <p class="label">Tareas</p>
+                    </div>
+                    
+                    <!-- Por este: -->
+                    <div id="fila_estadisticas" class="element">
+                      <svg
+                        class="lucide lucide-bar-chart-2"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        stroke="#7e8590"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                      </svg>
+                    
+                      <p class="label">Estadisticas</p>
                     </div>
                 </div>
             </div>
@@ -155,12 +178,15 @@
 
                 <button id="boton-crear-tarjeta">+</button>
             </div>
+            <div id="contenedor-estadisticas" class="item"></div>
         </div>
 
 <!-- Scripts de las secciones -->
         <script src="./Js/semana.js" defer></script>
         <script src="./Js/calendario.js" defer></script>
         <script src="./Js/Tareas.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="./Js/estadisticas.js" defer></script>
     </body>
     
 </html>

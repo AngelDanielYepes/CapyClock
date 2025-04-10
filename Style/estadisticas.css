@@ -1,0 +1,185 @@
+/* Estilos para la sección de estadísticas */
+:root {
+    --ColorFondo: #1a1a1a;
+    --ColorSection: #242424;
+    --ColorSecundario: #2c2c2c;
+    --ColorTexto: #F2E3D5;
+    --Sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contenedor-estadisticas {
+    width: 100%;
+    display: none; /* Inicialmente oculto */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .estadisticas-dashboard {
+    background-color: var(--ColorSection);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .titulo-dashboard {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--ColorTexto);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .paneles-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .paneles-estadisticas {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .panel-estadistica {
+    background-color: var(--ColorFondo);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .panel-estadistica h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--ColorTexto);
+  }
+  
+  .grafico-container {
+    height: 250px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .grafico {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .resumen-estadisticas {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--ColorTexto);
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .resumen-estadisticas > div {
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  .completadas {
+    background-color: #10B981; /* Verde */
+  }
+  
+  .pendientes {
+    background-color: #F59E0B; /* Amarillo */
+  }
+  
+  .vencidas {
+    background-color: #EF4444; /* Rojo */
+  }
+  
+  .alta {
+    background-color: #EF4444; /* Rojo */
+  }
+  
+  .media {
+    background-color: #F59E0B; /* Amarillo */
+  }
+  
+  .baja {
+    background-color: #10B981; /* Verde */
+  }
+  
+  .resumen-general {
+    background-color: var(--ColorFondo);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+  }
+  
+  .resumen-general h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--ColorTexto);
+    text-align: center;
+  }
+  
+  .cards-resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .cards-resumen {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .card-resumen {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .card-resumen .numero {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-resumen .etiqueta {
+    font-size: 14px;
+    color:var(--ColorTexto);
+  }
+  
+  .card-resumen.total {
+    background-color: var(--ColorSection);
+  }
+  .card-resumen.total .numero {
+    color: #3B82F6;
+  }
+  
+  .card-resumen.completadas {
+    background-color: var(--ColorSection);
+  }
+  .card-resumen.completadas .numero {
+    color: #10B981;
+  }
+  
+  .card-resumen.pendientes {
+    background-color: var(--ColorSection);
+  }
+  .card-resumen.pendientes .numero {
+    color: #F59E0B;
+  }
+  
+  .card-resumen.vencidas {
+    background-color: var(--ColorSection);
+  }
+  .card-resumen.vencidas .numero {
+    color: #EF4444;
+  }
